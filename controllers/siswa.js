@@ -4,7 +4,6 @@ import { extractDataSiswa, getRankSMA } from "../scrapeppdb.js";
 export const getAllPeringkat = async (req, res) => {
   const browser = await puppeteer.launch({
     defaultViewport: null,
-    // userDataDir: "./whatsappData",
     // headless: false,
   });
 
