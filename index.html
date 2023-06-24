@@ -50,7 +50,7 @@
         class="d-flex flex-col align-items-center justify-content-center w-100"
         style="min-height: 75vh"
       >
-        <div id="loading" class="d-none">
+        <div id="loading" class="d-none w-100">
           <div class="spinner-border" role="status"></div>
           <div class="px-4">Sedang mengambil data...(< 2 menit)</div>
         </div>
@@ -78,7 +78,8 @@
         e.preventDefault();
         let id = document.getElementById("id").value;
         console.log("fetching");
-        fetch(`http://localhost:5000/peringkat/${id}`)
+        // fetch(`http://localhost:5000/peringkat/${id}`)
+        fetch(`http://meowjestic.github.io:5000/peringkat/${id}`)
           .then((response) => response.json())
           .then((data) => {
             for (const [key, value] of Object.entries(data)) {
