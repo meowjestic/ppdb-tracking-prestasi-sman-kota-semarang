@@ -70,7 +70,8 @@
     let loading = document.getElementById("loading");
     let hasil = document.getElementById("hasil");
 
-    f.addEventListener("submit", (e) => {
+    try {
+      f.addEventListener("submit", (e) => {
       try {
         hasil.innerHTML = `<div id="pilihan" class="text-center"></div>`;
         let pilihan = document.getElementById("pilihan");
@@ -104,9 +105,12 @@
           })
           .then(() => loading.classList.add("d-none"));
       } catch (error) {
-        loading.classList.add("d-none");
-        pilihan.innerHTML = "ERROR, Silahkan coba lagi";
+        
       }
     });
+    } catch (error) {
+      loading.classList.add("d-none");
+      document.getElementById("pilihan").innerHTML = "ERROR, Silahkan coba lagi";
+    }
   </script>
 </html>
